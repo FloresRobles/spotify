@@ -156,7 +156,7 @@ func (a Authenticator) NewClient(token *oauth2.Token) Client {
 }
 
 // TokenSource returns the config TokenSource so it can be used (i.e. create and cache a reusableTokenSource).
-func (a Authenticator) TokenSource(token *oauth2.Token) *oauth2.TokenSource {
+func (a Authenticator) TokenSource(token *oauth2.Token) oauth2.TokenSource {
 	return a.config.TokenSource(oauth2.NoContext, token)
 }
 
